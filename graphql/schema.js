@@ -1,10 +1,12 @@
 const {
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLString
+  GraphQLString,
+  GraphQLList
 } = require('graphql');
+const dataUser = require('../data/User')
 
-cosnt User = new GraphQLObjectType({
+const User = new GraphQLObjectType({
   name: 'User',
   fields: {
     email: { type: GraphQLString },
@@ -13,8 +15,17 @@ cosnt User = new GraphQLObjectType({
   }
 })
 
+const Users = new GraphQLObjectType({
+  name: 'Users',
+  fields: {
+    users: {
+      type: new GraphQLList(User),
+      resolve: () => dataUser()
+    }
+  }
+})
 const userSchemaGQL = new GraphQLSchema({
-  query: User
+  query: Users
 })
 
 module.exports = userSchemaGQL

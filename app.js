@@ -3,12 +3,9 @@
 const express = require('express'),
       path = require('path'),
       logger = require('morgan'),
-      cookieParser = require('cookie-parser'),
       bodyParser = require('body-parser'),
-
-      //All Route Files
-      routes = require('./routes/index'),
-      users = require('./routes/users'),
+      graphQLSchema = require('./graphql/schema'),
+      graphqlHTTP = require('express-graphql'),
 
       //Express Instance
       app = express();
@@ -20,8 +17,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', graphqlHTTP({
+  schema: graphQLSchema,
+  graphiql: true
+}));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
