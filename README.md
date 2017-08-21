@@ -1,9 +1,6 @@
-# Tamvan Express ES6
-Tamvan Express ES6 is a simple scaffolding for building REST API using ExpressJS Framework and also ES6 (even still not the full ES6).
+# Tamvan Express GraphQL
 
-Actually it's only the minimal version of ExpressJS scaffolding which came from express-cli generator. I only add a little modification with changing the variable using ES6 syntax (`const`, `let`) and arrow function (`=>`). I also add some directories (`controllers`, `helpers`, and `models`) for MVC structure.
-
-The view engine is not available by default, as this scaffolding is focused for building a REST API.
+Tamvan Express GraphQL is a simple implementation and example on running GraphQL Server using express.js
 
 ## Basic Information and Dependencies (package.json)
 
@@ -53,13 +50,13 @@ cd your_directory_name
 
 npm install
 
-npm run dev `# running the server for development`
+npm run dev # running the server for development
 
-`#or`
+#or
 
-npm start `# running the server for production`
+npm start # running the server for production
 ```
-If you want to use environment variable just edit the `.env.template` file and fill it with your environment variable.
+Then, you can access the GraphiQL at `http://localhost:3000/`
 
 ## The MIT License
 Copyright 2017 - Septian A Tama (tamatamvan)
