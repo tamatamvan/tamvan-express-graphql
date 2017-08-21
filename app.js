@@ -1,21 +1,14 @@
 'use strict'
 //All Dependencies
 const express = require('express'),
-      path = require('path'),
       logger = require('morgan'),
-      bodyParser = require('body-parser'),
       graphQLSchema = require('./graphql/schema'),
       graphqlHTTP = require('express-graphql'),
 
       //Express Instance
       app = express();
 
-//load environment variables with dotenv
-require('dotenv').config()
-
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', graphqlHTTP({
   schema: graphQLSchema,
