@@ -9,7 +9,7 @@ The view engine is not available by default, as this scaffolding is focused for 
 
 ```json
 {
-  "name": "tamvan-express-es6",
+  "name": "tamvan-express-graphql",
   "version": "0.1.0",
   "private": false,
   "public": true,
@@ -19,10 +19,11 @@ The view engine is not available by default, as this scaffolding is focused for 
   },
   "dependencies": {
     "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "dotenv": "^4.0.0",
     "express": "~4.13.4",
+    "express-graphql": "^0.6.7",
+    "graphql": "^0.10.5",
     "morgan": "~1.7.0"
   }
 }
@@ -32,26 +33,23 @@ The view engine is not available by default, as this scaffolding is focused for 
 
 ```bash
 .
+├── LICENSE
 ├── README.md
 ├── app.js
 ├── bin
-│   └── www
-├── controllers
-│   └── index.js
-├── helpers
-│   └── index.js
-├── models
-│   └── index.js
-├── package.json
-└── routes
-    ├── index.js
-    └── users.js
+│   └── www
+├── data
+│   └── User.js
+├── graphql
+│   └── schema.js
+├── package-lock.json
+└── package.json
 ```
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/tamatamvan/tamvan-express-es6 your_directory_name
+git clone https://github.com/tamatamvan/tamavan-express-graphql your_directory_name
 
 cd your_directory_name
 
